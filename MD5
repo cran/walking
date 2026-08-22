@@ -1,9 +1,9 @@
-ff5feeeb1ca0f350ab3e5364096b4a1b *DESCRIPTION
+6bcbbb401892b12ca4e12a25cc93ec73 *DESCRIPTION
 4da21f13d36402ee13a147edaefbbd77 *NAMESPACE
-7239e8b5d15b403a8886e4479a5de510 *NEWS.md
+44c15f5788bf97a450b651ebe0f83a9d *NEWS.md
 1afab44f6b8adf14efc74c1669255ade *R/aaa_utils.R
 abad8ce99b2fd12054101a6a7d0bcf40 *R/api.R
-5c1776f33afe0129194d986975f8dc2d *R/find_walking.R
+805df50ee3f92fe15a905c35594fa2af *R/find_walking.R
 9641b82d29eef184aa770bfe8c0c901d *R/preprocess_bout.R
 30b4a8968d34e20741d1b83ff997677a *R/py_require_forest.R
 92a9a8a26025148ef6ee33a2117f6ec7 *R/sdt.R
@@ -12,7 +12,7 @@ ff075e398627b4f29a571360d7842f34 *R/verisense_count_steps.R
 c11e59539d0b24120f929a9247207c83 *README.md
 f9eb672d28449a2047f8d86556b3c03d *inst/test_data_bout.csv
 6706e0dc02f0c8a92b211dbe17d5503a *man/estimate_steps.Rd
-dba0085b03682714a783550d62197612 *man/find_walking.Rd
+f777fa1ac2965ef7a8927d9eadac3e97 *man/find_walking.Rd
 88f8b54c5deae2172eeb3d14f771d433 *man/preprocess_bout.Rd
 806b125b12e0150c5d07223661a7e452 *man/py_require_forest.Rd
 74290f3d3b7fa8c567275db5f9f2c5cf *man/sdt_count_steps.Rd

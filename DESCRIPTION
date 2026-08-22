@@ -1,7 +1,7 @@
 Package: walking
 Title: Segments Accelerometry Data into Walking Bouts using Open Source
         Methods
-Version: 0.7.0
+Version: 0.8.0
 Authors@R: 
     person(given = "John",
            family = "Muschelli",
@@ -11,7 +11,7 @@ Authors@R:
 Description: Segments walking from accelerometry data using 'forest' python 
     module <https://github.com/onnela-lab/forest> from Yi (2025) <doi:10.2196/71375>, 
     'Verisense' original from Rowlands (2022) <doi:10.1080/02640414.2022.2147134> 
-    and 'Verisense' revised from Maylor (2022)<doi:10.3390/s22249984>, 
+    and 'Verisense' revised from Maylor (2022) <doi:10.3390/s22249984>, 
     and Step Detection Threshold (SDT) from Ducharme (2021) 
     <doi:10.1123/jmpb.2021-0011> methods.
 License: GPL (>= 3)
@@ -22,9 +22,9 @@ Suggests: readr, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.0.0
 NeedsCompilation: no
-Packaged: 2026-07-23 13:59:14 UTC; johnmuschelli
+Packaged: 2026-08-22 15:36:01 UTC; johnmuschelli
 Author: John Muschelli [aut, cre] (ORCID:
     <https://orcid.org/0000-0001-6469-1750>)
 Maintainer: John Muschelli <muschellij2@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-08-03 17:40:02 UTC
+Date/Publication: 2026-08-22 15:50:02 UTC
