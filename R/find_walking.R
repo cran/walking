@@ -20,9 +20,13 @@
 #' (in multiplication of 0.05Hz)
 #' @param min_duration_peak minimum duration of peaks (in seconds)
 #' @param verbose print diagnostic messages
-#' @param disable_parellelization disable any back-end parallelization
-#' that is done in oak that is from `ssqueezepy`.
-#' See <https://github.com/OverLordGoldDragon/ssqueezepy#gpu--cpu-acceleration>
+#' @param disable_parallelization Whether to disable the CPU parallelization
+#' used by `oak` through `ssqueezepy`. Parallelization can speed up larger
+#' analyses but may conflict with an R/Python environment or its threading and
+#' OpenMP configuration. The default, `TRUE`, sets `SSQ_PARALLEL=0` while this
+#' function runs. If `forest` fails to load, set `Sys.setenv(SSQ_PARALLEL = 0)`
+#' before calling [py_require_forest()] and `reticulate::import("forest")`.
+#' See <https://github.com/OverLordGoldDragon/ssqueezepy#gpu--cpu-acceleration>.
 #'
 #' @return A vector of number of steps per second
 
@@ -30,6 +34,7 @@
 #'
 #' @examples
 #' \donttest{
+#'   Sys.setenv("SSQ_PARALLEL" = 0)
 #'   csv_file = system.file("test_data_bout.csv", package = "walking")
 #'   if (requireNamespace("readr", quietly = TRUE) && reticulate::py_module_available("forest")) {
 #'     x = readr::read_csv(csv_file)
@@ -47,17 +52,17 @@ find_walking = function(
     min_duration_peak = 3L,
     delta = 20L,
     verbose = TRUE,
-    disable_parellelization = TRUE
+    disable_parallelization = TRUE
 ) {
 
-  if (disable_parellelization) {
+  if (disable_parallelization) {
     # needed because
     # https://github.com/OverLordGoldDragon/ssqueezepy#gpu--cpu-acceleration
     ssq_previous = Sys.getenv("SSQ_PARALLEL", unset = NA)
     if (is.na(ssq_previous)) {
       on.exit({Sys.unsetenv("SSQ_PARALLEL")}, add = TRUE)
     } else {
-      on.exit({Sys.setenv("SSQ_PARALLEL", ssq_previous)}, add = TRUE)
+      on.exit({Sys.setenv("SSQ_PARALLEL" = ssq_previous)}, add = TRUE)
     }
     Sys.setenv("SSQ_PARALLEL" = 0)
   }

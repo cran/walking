@@ -14,7 +14,7 @@ find_walking(
   min_duration_peak = 3L,
   delta = 20L,
   verbose = TRUE,
-  disable_parellelization = TRUE
+  disable_parallelization = TRUE
 )
 }
 \arguments{
@@ -42,9 +42,13 @@ and within step frequency range}
 
 \item{verbose}{print diagnostic messages}
 
-\item{disable_parellelization}{disable any back-end parallelization
-that is done in oak that is from \code{ssqueezepy}.
-See \url{https://github.com/OverLordGoldDragon/ssqueezepy#gpu--cpu-acceleration}}
+\item{disable_parallelization}{Whether to disable the CPU parallelization
+used by \code{oak} through \code{ssqueezepy}. Parallelization can speed up larger
+analyses but may conflict with an R/Python environment or its threading and
+OpenMP configuration. The default, \code{TRUE}, sets \code{SSQ_PARALLEL=0} while this
+function runs. If \code{forest} fails to load, set \code{Sys.setenv(SSQ_PARALLEL = 0)}
+before calling \code{\link[=py_require_forest]{py_require_forest()}} and \code{reticulate::import("forest")}.
+See \url{https://github.com/OverLordGoldDragon/ssqueezepy#gpu--cpu-acceleration}.}
 }
 \value{
 A vector of number of steps per second
@@ -56,6 +60,7 @@ Frequency components are extracted with Continuous Wavelet Transform.
 }
 \examples{
 \donttest{
+  Sys.setenv("SSQ_PARALLEL" = 0)
   csv_file = system.file("test_data_bout.csv", package = "walking")
   if (requireNamespace("readr", quietly = TRUE) && reticulate::py_module_available("forest")) {
     x = readr::read_csv(csv_file)

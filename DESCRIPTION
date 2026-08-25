@@ -1,7 +1,7 @@
 Package: walking
 Title: Segments Accelerometry Data into Walking Bouts using Open Source
         Methods
-Version: 0.8.0
+Version: 0.8.2
 Authors@R: 
     person(given = "John",
            family = "Muschelli",
@@ -22,9 +22,9 @@ Suggests: readr, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.0.0
 NeedsCompilation: no
-Packaged: 2026-08-22 15:36:01 UTC; johnmuschelli
+Packaged: 2026-08-24 19:43:01 UTC; johnmuschelli
 Author: John Muschelli [aut, cre] (ORCID:
     <https://orcid.org/0000-0001-6469-1750>)
 Maintainer: John Muschelli <muschellij2@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-08-22 15:50:02 UTC
+Date/Publication: 2026-08-25 11:00:02 UTC
